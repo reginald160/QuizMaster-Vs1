@@ -33,3 +33,11 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure for Students(2977d594-c94c-4733-bfcb-3407af36e5b2)'
+    appType: 'webApp'
+    WebAppName: 'ginadev'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
